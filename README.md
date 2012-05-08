@@ -5,6 +5,11 @@ Chef config etc for my Ruby on Rails stack (postgres, thin, nginx).
 * sets up users
   * create user and group
   * create authorized_keys file
+* sets up some configs
+  * bashrc's
+  * vim
+  * gem
+  * bundler
 * installs prequisite packages
 * installs some software from source
 
