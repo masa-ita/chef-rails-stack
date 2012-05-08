@@ -1,5 +1,6 @@
 # software dependencies
 package "git-core"
+package "screen"
 
 # users and groups
 group node[:user][:name]
@@ -28,17 +29,26 @@ end
 end
 
 # user specific templates
-template "/home/#{node[:user][:name]}/.bashrc" do
-  source "bashrc-user.erb"
-  owner node[:user][:name]
+%w{bashrc profile screenrc}.each do |f|
+  template "/home/#{node[:user][:name]}/.#{f}" do
+    source "#{f}-user.erb"
+    owner node[:user][:name]
+  end
 end
 
+file "/home/#{node[:user][:name]}/.gemrc" do
+  owner node[:user][:name]
+  content "gem: --no-rdoc --no-ri"
+end
+
+# templates for root
 template "/root/.bashrc" do
   source "bashrc-root.erb"
   owner "root"
   group "root"
   mode "644"
 end
+
 
 # for security..
 directory "/home/#{node[:user][:name]}/.ssh" do
