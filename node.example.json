@@ -1,0 +1,8 @@
+{
+  "user": {
+		"name": "username",
+		"password": "crypted with `openssl passwd -1 'super sekrit password'`",
+		"authorized_keys": "the content for your ~/.ssh/authorized_keys"
+	},
+	"run_list": ["recipe[main]"]
+}
