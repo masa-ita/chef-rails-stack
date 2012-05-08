@@ -15,9 +15,21 @@ group "admin" do
   append true
 end
 
+template "/etc/bash.bashrc" do
+  source "bashrc-global.erb"
+  owner "root"
+  group "root"
+  mode "644"
+end
 template "/home/#{node[:user][:name]}/.bashrc" do
-  source "bashrc.erb"
+  source "bashrc-user.erb"
   owner node[:user][:name]
+end
+template "/root/.bashrc" do
+  source "bashrc-root.erb"
+  owner "root"
+  group "root"
+  mode "644"
 end
 
 if node[:user][:authorized_keys]
