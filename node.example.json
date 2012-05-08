@@ -1,8 +1,19 @@
 {
+	"_description": "values with an _underscore are considered comments. you can delete them.",
+
+	"_environment": "valid values: production, development",
+	"environment": "production",
+
   "user": {
+		"_name": "username of the user to be generated/updated",
 		"name": "username",
-		"password": "crypted with `openssl passwd -1 'super sekrit password'`",
-		"authorized_keys": "the content for your ~/.ssh/authorized_keys"
+
+		"_password": "crypted with `openssl passwd -1 'super sekrit password'`",
+		"password": "$1$...",
+
+		"_authorized_keys": "the content for your ~/.ssh/authorized_keys",
+		"authorized_keys": "ssh-rsa AAA...== description"
+
 	},
 	"run_list": ["recipe[main]"]
 }
