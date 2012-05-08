@@ -3,6 +3,8 @@ Description
 Chef config etc for my Ruby on Rails stack (postgres, thin, nginx).
 
 * sets up users
+  * create user and group
+  * create authorized_keys file
 * installs prequisite packages
 * installs some software from source
 

@@ -21,6 +21,10 @@ template "/home/#{node[:user][:name]}/.bashrc" do
 end
 
 if node[:user][:authorized_keys]
+  directory "/home/#{node[:user][:name]}/.ssh" do
+    mode "700"
+    owner node[:user][:name]
+  end
   file "/home/#{node[:user][:name]}/.ssh/authorized_keys" do
     owner node[:user][:name]
     mode "600"
