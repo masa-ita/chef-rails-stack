@@ -1,5 +1,7 @@
+# software dependencies
 package "git-core"
 
+# users and groups
 group node[:user][:name]
 user node[:user][:name] do
   password node[:user][:password]
@@ -15,16 +17,22 @@ group "admin" do
   append true
 end
 
-template "/etc/bash.bashrc" do
-  source "bashrc-global.erb"
-  owner "root"
-  group "root"
-  mode "644"
+# some global templates
+%w{/etc/bash.bashrc /etc/vim/vimrc}.each do |t|
+  template t do
+    source "#{t.match(/[a-z]+$/i)}-global.erb"
+    owner "root"
+    group "root"
+    mode "644"
+  end
 end
+
+# user specific templates
 template "/home/#{node[:user][:name]}/.bashrc" do
   source "bashrc-user.erb"
   owner node[:user][:name]
 end
+
 template "/root/.bashrc" do
   source "bashrc-root.erb"
   owner "root"
@@ -32,11 +40,16 @@ template "/root/.bashrc" do
   mode "644"
 end
 
+# for security..
+directory "/home/#{node[:user][:name]}/.ssh" do
+  mode "700"
+  owner node[:user][:name]
+  group node[:user][:name]
+end
+
+# optional stuff below here
+
 if node[:user][:authorized_keys]
-  directory "/home/#{node[:user][:name]}/.ssh" do
-    mode "700"
-    owner node[:user][:name]
-  end
   file "/home/#{node[:user][:name]}/.ssh/authorized_keys" do
     owner node[:user][:name]
     mode "600"
