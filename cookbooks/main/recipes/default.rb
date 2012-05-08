@@ -38,7 +38,7 @@ end
 
 file "/home/#{node[:user][:name]}/.gemrc" do
   owner node[:user][:name]
-  content "gem: --no-rdoc --no-ri"
+  content "gem: --no-rdoc --no-ri\n"
 end
 
 # templates for root
