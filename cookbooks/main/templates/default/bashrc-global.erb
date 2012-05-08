@@ -21,7 +21,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # sudo hint
-if [ ! -e "$HOME/.sudo_as_admin_successful" ]; then
+if [ ! -e "$HOME/.sudo_as_admin_successful" ] && [ ! -e "$HOME/.hushlogin" ] ; then
     case " $(groups) " in *\ admin\ *)
     if [ -x /usr/bin/sudo ]; then
 	cat <<-EOF
