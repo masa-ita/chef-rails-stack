@@ -1,3 +1,9 @@
 [submodule "cookbooks/nginx"]
 	path = cookbooks/nginx
 	url = https://github.com/opscode-cookbooks/nginx.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential.git
+[submodule "cookbooks/runit"]
+	path = cookbooks/runit
+	url = https://github.com/opscode-cookbooks/runit.git
