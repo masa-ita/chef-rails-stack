@@ -10,3 +10,6 @@
 [submodule "cookbooks/ohai"]
 	path = cookbooks/ohai
 	url = https://github.com/opscode-cookbooks/ohai.git
+[submodule "cookbooks/postgresql"]
+	path = cookbooks/postgresql
+	url = https://github.com/opscode-cookbooks/postgresql.git
