@@ -29,7 +29,7 @@ end
 end
 
 # user specific templates
-%w{bashrc profile screenrc}.each do |f|
+%w{bashrc profile screenrc gitconfig}.each do |f|
   template "/home/#{node[:user][:name]}/.#{f}" do
     source "#{f}-user.erb"
     owner node[:user][:name]
