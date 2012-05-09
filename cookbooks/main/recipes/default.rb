@@ -2,6 +2,8 @@
 package "git-core"
 package "screen"
 
+include_recipe "nginx::source"
+
 # users and groups
 group node[:user][:name]
 user node[:user][:name] do
