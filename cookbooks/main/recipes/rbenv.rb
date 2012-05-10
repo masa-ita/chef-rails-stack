@@ -36,4 +36,15 @@ if node[:user]
       group node[:user][:name]
     end
   end
+
+# install rubies
+  node[:rbenv][:rubies].each do |ruby|
+    execute "rbenv install #{ruby}" do
+      command %Q{export PATH=#{node[:rbenv][:path]}/bin:$PATH && eval "$(rbenv init -)" && rbenv install #{ruby}}
+      creates File.join(node[:rbenv][:path], "versions", ruby, "bin", "ruby")
+      user node[:user][:name]
+      group node[:user][:name]
+      environment ({'HOME' => "/home/#{node[:user][:name]}"})
+    end
+  end
 end

@@ -14,11 +14,13 @@ if node[:user]
     template "/home/#{node[:user][:name]}/.#{f}" do
       source "#{f}-user.erb"
       owner node[:user][:name]
+      group node[:user][:name]
     end
   end
 
   file "/home/#{node[:user][:name]}/.gemrc" do
     owner node[:user][:name]
+    group node[:user][:name]
     content "gem: --no-rdoc --no-ri\n"
   end
   
@@ -32,6 +34,7 @@ if node[:user]
   if node[:user][:authorized_keys]
     file "/home/#{node[:user][:name]}/.ssh/authorized_keys" do
       owner node[:user][:name]
+      group node[:user][:name]
       mode "600"
       content node[:user][:authorized_keys]  
     end
