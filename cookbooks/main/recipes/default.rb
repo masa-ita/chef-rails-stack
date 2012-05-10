@@ -21,6 +21,7 @@ if node[:user]
 end
 
 include_recipe "main::config_files"
+include_recipe "main::rbenv"
 include_recipe "nginx::source"
 package "postgresql-9.1"
 

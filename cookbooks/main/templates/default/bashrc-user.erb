@@ -1,6 +1,7 @@
 export RAILS_ENV=<%= node[:environment] %>
-if [ -d $HOME/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+
+if [ -d <%= node[:rbenv][:path] %> ]; then
+  export PATH="<%= File.join node[:rbenv][:path], 'bin' %>:$PATH"
   eval "$(rbenv init -)"
 fi
 
