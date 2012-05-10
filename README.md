@@ -1,6 +1,6 @@
 Description
 ---
-Chef config etc for my Ruby on Rails stack (postgres, thin, nginx).
+Chef config etc for my Ruby on Rails stack (postgres, nginx, unicorn).
 
 * sets up users
   * create user and group
@@ -24,6 +24,6 @@ Contents
 ---
 * [git](http://git-scm.com)
 * [nginx](http://nginx.org) (s)
-* [postgresql](http://www.postgresql.org) (s)
+* [postgresql](http://www.postgresql.org) - coming soon!
 
 (s) from source
