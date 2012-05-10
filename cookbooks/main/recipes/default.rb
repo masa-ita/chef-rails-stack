@@ -2,8 +2,6 @@
 package "git-core"
 package "screen"
 
-include_recipe "nginx::source"
-
 # users and groups
 group node[:user][:name]
 user node[:user][:name] do
@@ -21,3 +19,10 @@ group "admin" do
 end
 
 include_recipe "main::config_files"
+
+include_recipe "nginx::source"
+
+# TODO: postgresql
+# does currently not work because of broken postgresql::server
+#include_recipe "postgresql::server"
+
