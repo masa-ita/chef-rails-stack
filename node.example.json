@@ -1,12 +1,13 @@
 {
   "_description": "values with an _underscore are considered comments. you can delete them.",
+	"_defaults": "default values parallel to the values in attributes/default.rb",
 
   "_environment": "valid values: production, development",
   "environment": "production",
 
   "user": {
     "_name": "username of the user to be generated/updated",
-    "name": "username",
+    "name": "deployer",
 
     "_password": "crypted with `openssl passwd -1 'super sekrit password'`",
     "password": "$1$...",
@@ -14,5 +15,13 @@
     "_authorized_keys": "the content for your ~/.ssh/authorized_keys",
     "authorized_keys": "ssh-rsa AAA...== description"
   },
+
+	"rbenv": {
+		"_rubies": "the Ruby versions to be installed",
+		"rubies": ["1.9.3-p194"],
+
+		"_plugins": "the rbenv-plugins to be installend. note that ruby-build is required...",
+		"plugins": ["https://github.com/sstephenson/ruby-build.git", "https://github.com/jamis/rbenv-gemset.git"]
+	},
   "run_list": ["recipe[main]"]
 }
