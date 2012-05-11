@@ -16,7 +16,23 @@ end
 
 desc 'run the chef-solo command on the hostname'
 task :run, [:hostname] do |t, args|
-  say "TODO run chef-solo -c blabla...!"
+  Net::SSH.start(args.hostname, 'root') do |ssh|
+    channel = ssh.open_channel do |ch|
+      # callbacks
+      ch.on_data do |c, data|
+        STDOUT.print data
+      end
+      ch.on_extended_data do |c, type, data|
+        STDERR.print data
+      end
+      ch.on_close { say "SSH Session closed!" }
+
+      say "run chef-solo"
+      cmd = %Q{chef-solo -c /var/chef/solo.rb}
+      say cmd
+      ch.exec cmd
+    end
+  end
 end
 
 # administrative tasks
