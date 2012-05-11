@@ -8,7 +8,10 @@ task :deploy, [:hostname] => [:upload, :run]
 
 desc 'upload all the cookbooks etc to the hostname'
 task :upload, [:hostname] do |t, args|
-  say "TODO upload stuff to root@#{args.hostname}!"
+  say "Uploading current directory..."
+  cmd = %Q{rsync -rv --delete #{File.expand_path(__FILE__+"/..")}/ root@#{args.hostname}:/var/chef --exclude='.git*' --exclude=cache --exclude=backup}
+  say cmd
+  system cmd
 end
 
 desc 'run the chef-solo command on the hostname'
@@ -32,11 +35,15 @@ task :prepare, [:hostname] do |t, args|
       ch.on_close { say "SSH Session closed!" }
       
       say "Installing curl and rsync"
+      say "apt-get install -y curl rsync"
       ch.exec "apt-get install -y curl rsync"
       ch.wait
       say "Running chef-solo-bootstrap script..."
+      say "curl -L https://raw.github.com/gist/2349875/chef_solo_bootstrap.sh | bash"
       ch.exec "curl -L https://raw.github.com/gist/2349875/chef_solo_bootstrap.sh | bash"
       ch.wait
+      say "mkdir /var/chef"
+      ch.exec "mkdir /var/chef"
     end
     channel.wait
   end
