@@ -4,3 +4,6 @@
 [submodule "cookbooks/ohai"]
 	path = cookbooks/ohai
 	url = https://github.com/opscode-cookbooks/ohai.git
+[submodule "cookbooks/apt"]
+	path = cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt.git
