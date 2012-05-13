@@ -23,7 +23,5 @@ Example:
 Contents
 ---
 * [git](http://git-scm.com)
-* [nginx](http://nginx.org) (s)
-* [postgresql](http://www.postgresql.org) - coming soon!
-
-(s) from source
+* [nginx](http://nginx.org)
+* [postgresql](http://www.postgresql.org)

@@ -22,10 +22,5 @@ end
 
 include_recipe "main::config_files"
 include_recipe "main::rbenv"
-include_recipe "nginx::source"
+include_recipe "nginx"
 package "postgresql-9.1"
-
-# TODO: postgresql
-# does currently not work because of broken postgresql::server
-#include_recipe "postgresql::server"
-
