@@ -24,6 +24,17 @@ if node[:user]
     content "gem: --no-rdoc --no-ri\n"
   end
   
+  directory "/home/#{node[:user][:name]}/.bundle" do
+    mode "755"
+    owner node[:user][:name]
+    group node[:user][:name]
+  end
+  template "/home/#{node[:user][:name]}/.bundle/config" do
+    source "bundle-config-user.erb"
+    owner node[:user][:name]
+    group node[:user][:name]
+  end
+
   # for security..
   directory "/home/#{node[:user][:name]}/.ssh" do
     mode "700"

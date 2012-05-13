@@ -1,0 +1,6 @@
+---
+<%- if node[:environment] == "production" %>
+BUNDLE_WITHOUT: development test assets
+<%- else %>
+BUNDLE_WITHOUT: production
+<%- end %>
