@@ -40,7 +40,7 @@ if node[:user]
 # install rubies
   node[:rbenv][:rubies].each do |ruby|
     execute "rbenv install #{ruby}" do
-      command %Q{export PATH=#{node[:rbenv][:path]}/bin:$PATH && eval "$(rbenv init -)" && rbenv install #{ruby} && rbenv global #{ruby}}
+      command %Q{export PATH=#{node[:rbenv][:path]}/bin:$PATH && eval "$(rbenv init -)" && rbenv install #{ruby} && rbenv global #{ruby} && gem install bundler -y}
       creates File.join(node[:rbenv][:path], "versions", ruby, "bin", "ruby")
       user node[:user][:name]
       group node[:user][:name]

@@ -23,6 +23,11 @@ if node[:user]
     group node[:user][:name]
     content "gem: --no-rdoc --no-ri\n"
   end
+  file "/home/#{node[:user][:name]}/.rbenv-gemsets" do
+    owner node[:user][:name]
+    group node[:user][:name]
+    content "global"
+  end
   
   directory "/home/#{node[:user][:name]}/.bundle" do
     mode "755"
@@ -31,6 +36,13 @@ if node[:user]
   end
   template "/home/#{node[:user][:name]}/.bundle/config" do
     source "bundle-config-user.erb"
+    owner node[:user][:name]
+    group node[:user][:name]
+  end
+
+  # create the /apps dir
+  directory "/apps" do
+    mode "755"
     owner node[:user][:name]
     group node[:user][:name]
   end
@@ -59,4 +71,3 @@ template "/root/.bashrc" do
   group "root"
   mode "644"
 end
-
