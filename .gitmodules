@@ -1,9 +1,9 @@
 [submodule "cookbooks/nginx"]
 	path = cookbooks/nginx
-	url = https://github.com/opscode-cookbooks/nginx.git
+	url = git://github.com/opscode-cookbooks/nginx.git
 [submodule "cookbooks/ohai"]
 	path = cookbooks/ohai
-	url = https://github.com/opscode-cookbooks/ohai.git
+	url = git://github.com/opscode-cookbooks/ohai.git
 [submodule "cookbooks/apt"]
 	path = cookbooks/apt
-	url = https://github.com/opscode-cookbooks/apt.git
+	url = git://github.com/opscode-cookbooks/apt.git
