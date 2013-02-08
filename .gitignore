@@ -1,4 +1,5 @@
 node.json
 .ruby-version
+.idea
 /cache/
 /backup/
