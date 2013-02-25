@@ -10,3 +10,21 @@
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
 	url = git://github.com/opscode-cookbooks/postgresql.git
+[submodule "cookbooks/passenger_nginx"]
+	path = cookbooks/passenger_nginx
+	url = git://github.com/rellimevad/passenger_nginx.git
+[submodule "cookbooks/openssl"]
+	path = cookbooks/openssl
+	url = git://github.com/opscode-cookbooks/openssl.git
+[submodule "cookbooks/build_essential"]
+	path = cookbooks/build_essential
+	url = git://github.com/opscode-cookbooks/build-essential.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = git://github.com/opscode-cookbooks/build-essential.git
+[submodule "cookbooks/runit"]
+	path = cookbooks/runit
+	url = git://github.com/opscode-cookbooks/runit.git
+[submodule "cookbooks/chef-postgresql"]
+	path = cookbooks/chef-postgresql
+	url = git://github.com/phlipper/chef-postgresql.git
