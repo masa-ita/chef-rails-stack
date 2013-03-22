@@ -27,7 +27,7 @@ task :prepare, [:hostname] do |t, args|
 
   Net::SSH.start(args.hostname, "root") do |ssh|
     run_cmd ssh, "apt-get install -y curl"
-    run_cmd ssh, "curl -L https://raw.github.com/gist/2349875/chef_solo_bootstrap.sh | bash"
+    run_cmd ssh, "curl -L https://raw.github.com/gist/4752223/chef_solo_bootstrap.sh | bash"
   end
 
 end

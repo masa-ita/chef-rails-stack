@@ -16,3 +16,6 @@
 [submodule "cookbooks/runit"]
 	path = cookbooks/runit
 	url = git://github.com/opscode-cookbooks/runit.git
+[submodule "cookbooks/postgresql"]
+	path = cookbooks/postgresql
+	url = git://github.com/phlipper/chef-postgresql.git
