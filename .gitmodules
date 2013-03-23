@@ -13,9 +13,6 @@
 [submodule "cookbooks/build_essential"]
 	path = cookbooks/build_essential
 	url = git://github.com/opscode-cookbooks/build-essential.git
-[submodule "cookbooks/runit"]
-	path = cookbooks/runit
-	url = git://github.com/opscode-cookbooks/runit.git
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
 	url = git://github.com/phlipper/chef-postgresql.git
