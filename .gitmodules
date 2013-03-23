@@ -10,9 +10,9 @@
 [submodule "cookbooks/openssl"]
 	path = cookbooks/openssl
 	url = git://github.com/opscode-cookbooks/openssl.git
-[submodule "cookbooks/build_essential"]
-	path = cookbooks/build_essential
-	url = git://github.com/opscode-cookbooks/build-essential.git
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
 	url = git://github.com/phlipper/chef-postgresql.git
+[submodule "cookbooks/build-essential"]
+	path = cookbooks/build-essential
+	url = git://github.com/opscode-cookbooks/build-essential.git
