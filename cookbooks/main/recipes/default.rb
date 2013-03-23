@@ -39,22 +39,6 @@ gem_package("bundler") do
 end
 
 include_recipe "main::config_files"
-#include_recipe "main::rbenv"
-#include_recipe "nginx"
-#nginx_site 'default', :enable => false
-#apt_repository "pitti-postgresql" do
-#  uri "http://ppa.launchpad.net/pitti/postgresql/ubuntu"
-#  distribution node['lsb']['codename']
-#  components ["main"]
-#  keyserver "keyserver.ubuntu.com"
-#  key "8683D8A2"
-#  action :add
-#  notifies :run, resources(:execute => "apt-get update"), :immediately
-#end
-#
-#
-#package "postgresql-9.1"
-#package "postgresql-server-dev-9.1"
 
 if node[:features][:rmagick]
   package "imagemagick"

@@ -1,5 +1,6 @@
 node.json
 .ruby-version
+.rbenv-gemsets
 .idea
 /cache/
 /backup/

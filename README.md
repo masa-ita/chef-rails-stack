@@ -1,6 +1,6 @@
 Description
 ---
-Chef config etc for my Ruby on Rails stack (postgres, nginx, unicorn).
+Chef config etc for my Ruby on Rails stack (postgres, nginx, passenger).
 
 * sets up users
   * create user and group
